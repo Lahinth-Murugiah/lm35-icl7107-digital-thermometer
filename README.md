@@ -29,9 +29,20 @@ These are nominal sensor-output calculations, not measured hardware results. The
 
 ## PCB design
 
-| EasyEDA routing | 3D perspective |
-| --- | --- |
-| [![EasyEDA two-dimensional PCB routing layout](hardware/easyeda/pcb-2d-routing.png)](hardware/easyeda/pcb-2d-routing.png) | [![EasyEDA three-dimensional perspective render of the thermometer PCB](hardware/easyeda/pcb-3d-perspective.png)](hardware/easyeda/pcb-3d-perspective.png) |
+<table>
+  <tr>
+    <th width="50%">EasyEDA routing</th>
+    <th width="50%">3D perspective</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center" valign="middle">
+      <a href="hardware/easyeda/pcb-2d-routing.png"><img src="hardware/easyeda/pcb-2d-routing.png" alt="EasyEDA two-dimensional PCB routing layout" width="450"></a>
+    </td>
+    <td width="50%" align="center" valign="middle">
+      <a href="hardware/easyeda/pcb-3d-perspective.png"><img src="hardware/easyeda/pcb-3d-perspective.png" alt="EasyEDA three-dimensional perspective render of the thermometer PCB" width="450"></a>
+    </td>
+  </tr>
+</table>
 
 [![Top view of the digital thermometer PCB in EasyEDA](hardware/easyeda/pcb-3d-top.png)](hardware/easyeda/pcb-3d-top.png)
 
