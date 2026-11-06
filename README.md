@@ -2,11 +2,11 @@
 
 This IE2044 System Modeling and Prototyping project uses an **LM35 temperature sensor** and an **ICL7107 integrating ADC with built-in seven-segment display drivers** to display temperature on two digits. The circuit was simulated in **Proteus**, tested on a breadboard, and laid out as a PCB in **EasyEDA**.
 
-[Project report](docs/IE2044_Assignment_Group_06.pdf) · [Proteus simulation](hardware/proteus/evidenceproteus-30c.png) · [PCB routing](hardware/easyeda/pcb-2d-routing.png)
+[Project report](docs/IE2044_Assignment_Group_06.pdf) · [Proteus simulation](simulation%20and%20PCB%20Design/proteus/evidenceproteus-30c.png) · [PCB routing](simulation%20and%20PCB%20Design/easyeda/pcb-2d-routing.png)
 
 ## Circuit design and project targets
 
-[![Proteus circuit and two-digit display with the LM35 set to 30 degrees Celsius](hardware/proteus/evidenceproteus-30c.png)](hardware/proteus/evidenceproteus-30c.png)
+[![Proteus circuit and two-digit display with the LM35 set to 30 degrees Celsius](simulation%20and%20PCB%20Design/proteus/evidenceproteus-30c.png)](simulation%20and%20PCB%20Design/proteus/evidenceproteus-30c.png)
 
 | Signal stage | Project target | Circuit implementation |
 | --- | --- | --- |
@@ -36,15 +36,15 @@ These are nominal sensor-output calculations, not measured hardware results. The
   </tr>
   <tr>
     <td width="50%" align="center" valign="middle">
-      <a href="hardware/easyeda/pcb-2d-routing.png"><img src="hardware/easyeda/pcb-2d-routing.png" alt="EasyEDA two-dimensional PCB routing layout" width="450"></a>
+      <a href="simulation%20and%20PCB%20Design/easyeda/pcb-2d-routing.png"><img src="simulation%20and%20PCB%20Design/easyeda/pcb-2d-routing.png" alt="EasyEDA two-dimensional PCB routing layout" width="450"></a>
     </td>
     <td width="50%" align="center" valign="middle">
-      <a href="hardware/easyeda/pcb-3d-perspective.png"><img src="hardware/easyeda/pcb-3d-perspective.png" alt="EasyEDA three-dimensional perspective render of the thermometer PCB" width="450"></a>
+      <a href="simulation%20and%20PCB%20Design/easyeda/pcb-3d-perspective.png"><img src="simulation%20and%20PCB%20Design/easyeda/pcb-3d-perspective.png" alt="EasyEDA three-dimensional perspective render of the thermometer PCB" width="450"></a>
     </td>
   </tr>
 </table>
 
-[![Top view of the digital thermometer PCB in EasyEDA](hardware/easyeda/pcb-3d-top.png)](hardware/easyeda/pcb-3d-top.png)
+[![Top view of the digital thermometer PCB in EasyEDA](simulation%20and%20PCB%20Design/easyeda/pcb-3d-top.png)](simulation%20and%20PCB%20Design/easyeda/pcb-3d-top.png)
 
 The images document the **PCB layout and 3D design**. The board was not physically fabricated, so these renders do not represent an assembled or tested PCB.
 
@@ -52,7 +52,7 @@ The images document the **PCB layout and 3D design**. The board was not physical
 
 | Proteus: 0°C test point | Proteus: 30°C test point |
 | --- | --- |
-| [![Proteus simulation with the LM35 set to 0 degrees Celsius](hardware/proteus/evidenceproteus-0c.png)](hardware/proteus/evidenceproteus-0c.png) | [![Proteus simulation with the LM35 set to 30 degrees Celsius](hardware/proteus/evidenceproteus-30c.png)](hardware/proteus/evidenceproteus-30c.png) |
+| [![Proteus simulation with the LM35 set to 0 degrees Celsius](simulation%20and%20PCB%20Design/proteus/evidenceproteus-0c.png)](simulation%20and%20PCB%20Design/proteus/evidenceproteus-0c.png) | [![Proteus simulation with the LM35 set to 30 degrees Celsius](simulation%20and%20PCB%20Design/proteus/evidenceproteus-30c.png)](simulation%20and%20PCB%20Design/proteus/evidenceproteus-30c.png) |
 
 The published Proteus screenshots document the **0°C and 30°C** test points. The [project report](docs/IE2044_Assignment_Group_06.pdf) discusses additional simulation testing and the practical breadboard attempt.
 
