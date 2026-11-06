@@ -59,12 +59,3 @@ Further bench verification should record the LM35 output, the differential ADC i
 
 A fabricated PCB would allow the proposed grounding, decoupling, and shorter analog connections to be evaluated. Native Proteus and EasyEDA design files, a bill of materials, and fabrication outputs are not currently included in this repository.
 
-## Project team
-
-- **Lahinth M.** — IT24103482
-- **Viyashan K.** — IT24103620
-
-**Module:** IE2044 – System Modeling and Prototyping  
-**Group:** 06  
-**Institution:** Sri Lanka Institute of Information Technology  
-**Report submission date:** 1 May 2026
