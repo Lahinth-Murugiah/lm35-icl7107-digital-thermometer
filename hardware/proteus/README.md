@@ -1,14 +1,10 @@
-# Proteus Simulation
+# Proteus simulation
 
-This directory is reserved for the native Proteus project and simulation evidence.
+| LM35 setting | Visible display | Screenshot |
+| --- | --- | --- |
+| 0 °C | 00 | [0 °C simulation](evidenceproteus-0c.png) |
+| 30 °C | 30 | [30 °C simulation](evidenceproteus-30c.png) |
 
-## Evidence to publish
+The screenshots show the LM35 input divider, the adjustable reference and the dual supply used in the simulation. See the [scaling explanation](../../README.md#how-the-display-scaling-works) for the connection between the ADC counts and the displayed digits.
 
-- `evidence/proteus-0c.png` — LM35 configured at 0°C; display evidence should show 00.
-- `evidence/proteus-30c.png` — LM35 configured at 30°C; display evidence should show 30.
-
-The images are intended to document simulation results only. They do not demonstrate a fabricated PCB or completed physical prototype.
-
-## Reproducibility
-
-Add the original Proteus project file and any required linked libraries/models when available. Record the Proteus version and any simulation settings needed to reproduce the results.
+The editable Proteus project is pending. Include the Proteus version and any required models or libraries when publishing it.
