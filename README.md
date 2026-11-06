@@ -1,100 +1,70 @@
-# LM35 + ICL7107 Digital Thermometer
+# LM35 and ICL7107 Digital Thermometer
 
-A two-digit digital thermometer design using an **LM35 temperature sensor** and an **ICL7107 integrating ADC with built-in 7-segment display drivers**. Developed for the IE2044 – System Modeling and Prototyping module at the Sri Lanka Institute of Information Technology (Group 06).
+This IE2044 System Modeling and Prototyping project uses an **LM35 temperature sensor** and an **ICL7107 integrating ADC with built-in seven-segment display drivers** to display temperature on two digits. The circuit was simulated in **Proteus**, tested on a breadboard, and laid out as a PCB in **EasyEDA**.
 
-> **Project status:** The supplied materials document Proteus simulation and an EasyEDA PCB layout. The report records unstable breadboard readings, and the PCB was not physically fabricated. This repository does not claim a completed PCB-mounted prototype.
+[Project report](docs/IE2044_Assignment_Group_06.pdf) · [Proteus simulation](hardware/proteus/evidenceproteus-30c.png) · [PCB routing](hardware/easyeda/pcb-2d-routing.png)
 
-## Project overview
+## Circuit design and project targets
 
-The LM35 produces an output of approximately 10 mV/°C. The design targets a 100 mV reference so the display scaling corresponds to one count per degree Celsius, with a two-digit intended range of 0°C–99°C.
+[![Proteus circuit and two-digit display with the LM35 set to 30 degrees Celsius](hardware/proteus/evidenceproteus-30c.png)](hardware/proteus/evidenceproteus-30c.png)
 
-| Item | Design |
-|---|---|
-| Temperature sensor | LM35 |
-| ADC / display driver | ICL7107, DIP-40 |
-| Display | Two 7-segment displays |
-| Intended range | 0°C–99°C |
-| Sensor sensitivity | 10 mV/°C |
-| Reference target | 100 mV |
-| Supply | +5 V and −5 V for ICL7107 |
-| PCB design tool | EasyEDA |
-| Circuit simulation | Proteus |
+| Signal stage | Project target | Circuit implementation |
+| --- | --- | --- |
+| 1. Temperature sensing | Convert temperature into an analog voltage | The LM35 produces an output proportional to temperature, with a nominal sensitivity of 10 mV/°C. |
+| 2. Analog-to-digital conversion | Convert the sensor signal into a display reading | The ICL7107 uses a dual-slope integrating ADC. The reference adjustment sets the conversion scale. |
+| 3. Temperature display | Two-digit indication over an intended 0–99°C range | Two seven-segment displays are driven by the ICL7107. |
+| 4. Power supply | Provide the required positive and negative supply rails | The design uses +5 V and −5 V for the ICL7107, with an ICL7660 negative-supply circuit described in the report. |
 
-## How it works
+The two-digit range is a **design target**. The published simulation captures show individual test points; they do not establish accuracy across the full range.
 
-1. The LM35 senses temperature and generates a proportional analog voltage.
-2. The ICL7107 converts the analog input using its dual-slope integrating ADC architecture.
-3. The ICL7107 drives the 7-segment displays.
-4. The reference potentiometer is adjusted to the 100 mV target described in the report.
+### Sensor output and calibration
 
-## Repository structure
+| Temperature | Nominal LM35 output | Basis |
+| --- | --- | --- |
+| 0°C | 0 mV | 0 × 10 mV/°C |
+| 30°C | 300 mV | 30 × 10 mV/°C |
+| 99°C | 990 mV | 99 × 10 mV/°C |
 
-```text
-.
-├── README.md
-├── docs/
-│   ├── assignment-brief.pdf
-│   └── project-report.pdf
-├── hardware/
-│   ├── proteus/
-│   │   └── evidence/
-│   │       ├── proteus-0c.png
-│   │       └── proteus-30c.png
-│   └── easyeda/
-│       └── renders/
-│           ├── pcb-2d-routing.png
-│           ├── pcb-3d-perspective.png
-│           └── pcb-3d-top.png
-└── images/
-    └── pcb-preview.png
-```
+These are nominal sensor-output calculations, not measured hardware results. The report describes a **100 mV reference target**. The final displayed scale also depends on the ADC input scaling and the display-digit connections; the reference value alone does not establish one displayed count per degree Celsius.
 
-**Repository publication note:** This initial GitHub update publishes the project README and supporting folder documentation. The binary PDFs and PNG renders from the supplied materials still need to be uploaded; the paths above describe the intended final layout and are not links to files already present on GitHub.
+## PCB design
 
-## Simulation and design evidence
+| EasyEDA routing | 3D perspective |
+| --- | --- |
+| [![EasyEDA two-dimensional PCB routing layout](hardware/easyeda/pcb-2d-routing.png)](hardware/easyeda/pcb-2d-routing.png) | [![EasyEDA three-dimensional perspective render of the thermometer PCB](hardware/easyeda/pcb-3d-perspective.png)](hardware/easyeda/pcb-3d-perspective.png) |
 
-The supplied Proteus screenshots show the LM35 set to 0°C and 30°C, with corresponding two-digit display readings. The report also describes additional simulation test points; separate screenshots for all those points were not supplied.
+[![Top view of the digital thermometer PCB in EasyEDA](hardware/easyeda/pcb-3d-top.png)](hardware/easyeda/pcb-3d-top.png)
 
-The EasyEDA images show the PCB routing and 3D board views. These are visual design evidence, not fabrication or assembly evidence.
+The images document the **PCB layout and 3D design**. The board was not physically fabricated, so these renders do not represent an assembled or tested PCB.
 
-## Testing and limitations
+## Simulation and bench results
 
-- **Proteus:** The report describes successful simulation verification of the LM35-to-display scaling.
-- **Breadboard:** The report records fluctuating readings (approximately ±2 to ±5 counts), sensitivity to touch/interference and difficulty calibrating the reference voltage.
-- **PCB:** The board was designed in EasyEDA but was not physically fabricated. No Gerber package, NC drill files, BOM export or assembled-PCB test evidence is currently published.
+| Proteus: 0°C test point | Proteus: 30°C test point |
+| --- | --- |
+| [![Proteus simulation with the LM35 set to 0 degrees Celsius](hardware/proteus/evidenceproteus-0c.png)](hardware/proteus/evidenceproteus-0c.png) | [![Proteus simulation with the LM35 set to 30 degrees Celsius](hardware/proteus/evidenceproteus-30c.png)](hardware/proteus/evidenceproteus-30c.png) |
 
-The report discusses possible practical contributors including breadboard parasitics, ground noise, charge-pump ripple from the ICL7660 negative supply, long analog signal wires and reference-adjustment sensitivity. Proposed improvements include a fabricated PCB, improved grounding and decoupling, input filtering and a more stable reference source.
+The published Proteus screenshots document the **0°C and 30°C** test points. The [project report](docs/IE2044_Assignment_Group_06.pdf) discusses additional simulation testing and the practical breadboard attempt.
 
-## Tools and components
+| Development stage | Reported outcome |
+| --- | --- |
+| Proteus simulation | Temperature-to-display operation demonstrated in simulation, with two separate captures published here. |
+| Breadboard test | Fluctuating readings of approximately ±2 to ±5 counts, sensitivity to touch/interference, and difficulty calibrating the reference voltage. |
+| EasyEDA PCB | Routing and 3D views completed; the board was not physically fabricated. |
 
-- Proteus – circuit simulation
-- EasyEDA – PCB design
-- LM35 – analog temperature sensor
-- ICL7107 – integrating ADC and LED display driver
-- ICL7660 – negative voltage generation as described in the report
+The report discusses breadboard parasitics, ground noise, ICL7660 charge-pump ripple, long analog signal wires, and reference-adjustment sensitivity as possible contributors to unstable readings. These are proposed explanations rather than separately measured causes.
 
-## Contributors
+### Stage-by-stage verification
 
-- **Lahinth M.** – IT24103482
-- **Viyashan K.** – IT24103620
+Further bench verification should record the LM35 output, the differential ADC input, the reference voltage, and both supply rails at known temperatures. Comparing the display against a reference thermometer at several stable temperatures would establish offset, scaling error, and repeatability.
+
+A fabricated PCB would allow the proposed grounding, decoupling, and shorter analog connections to be evaluated. Native Proteus and EasyEDA design files, a bill of materials, and fabrication outputs are not currently included in this repository.
+
+## Project team
+
+- **Lahinth M.** — IT24103482
+- **Viyashan K.** — IT24103620
 
 **Module:** IE2044 – System Modeling and Prototyping  
 **Group:** 06  
 **Institution:** Sri Lanka Institute of Information Technology  
 **Report submission date:** 1 May 2026
-
-## Recommended files to add next
-
-To make the project reproducible, add the original editable source files when available:
-
-- Proteus native project and any required linked libraries/models.
-- EasyEDA schematic and PCB source/export.
-- Gerber files, NC drill file, board outline and fabrication notes after design-rule checks.
-- Bill of Materials with part numbers, footprints and quantities.
-- Physical assembly photographs and measured hardware results after fabrication.
-
-Run a fresh ERC/DRC and verify all outputs before manufacturing.
-
-## License
-
-No open-source license has been specified. Unless the authors add a license, reuse and redistribution permissions are not granted by this repository by default. Assignment and institutional materials remain subject to their respective rights.
