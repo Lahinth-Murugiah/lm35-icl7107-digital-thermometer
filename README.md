@@ -2,7 +2,7 @@
 
 This IE2044 System Modeling and Prototyping project uses an **LM35 temperature sensor** and an **ICL7107 integrating ADC with built-in seven-segment display drivers** to display temperature on two digits. The circuit was simulated in **Proteus**, tested on a breadboard, and laid out as a PCB in **EasyEDA**.
 
-[Project report](docs/IE2044_Assignment_Group_06.pdf) · [Proteus simulation](simulation/evidenceproteus-30c.png) · [PCB routing](PCB%20design/pcb-2d-routing.png)
+[Project report](docs/IE2044_Assignment_Group_06.pdf) · [Proteus simulation](simulation/evidenceproteus-30c.png) · [PCB routing](pcb%20design/pcb-2d-routing.png)
 
 ## Circuit design and project targets
 
@@ -38,15 +38,15 @@ The EasyEDA design is presented through the routed PCB layout and three-dimensio
   </tr>
   <tr>
     <td width="50%" align="center" valign="middle">
-      <a href="PCB%20design/pcb-2d-routing.png"><img src="PCB%20design/pcb-2d-routing.png" alt="EasyEDA two-dimensional PCB routing layout" width="450"></a>
+      <a href="pcb%20design/pcb-2d-routing.png"><img src="pcb%20design/pcb-2d-routing.png" alt="EasyEDA two-dimensional PCB routing layout" width="450"></a>
     </td>
     <td width="50%" align="center" valign="middle">
-      <a href="PCB%20design/pcb-3d-perspective.png"><img src="PCB%20design/pcb-3d-perspective.png" alt="EasyEDA three-dimensional perspective render of the thermometer PCB" width="450"></a>
+      <a href="pcb%20design/pcb-3d-perspective.png"><img src="pcb%20design/pcb-3d-perspective.png" alt="EasyEDA three-dimensional perspective render of the thermometer PCB" width="450"></a>
     </td>
   </tr>
 </table>
 
-[![Top view of the digital thermometer PCB in EasyEDA](PCB%20design/pcb-3d-top.png)](PCB%20design/pcb-3d-top.png)
+[![Top view of the digital thermometer PCB in EasyEDA](pcb%20design/pcb-3d-top.png)](pcb%20design/pcb-3d-top.png)
 
 ## Simulation and bench results
 
